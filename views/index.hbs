@@ -17,88 +17,25 @@
         <label for="Livro">Livro</label>
         <select class="form-select" aria-label="Default select example" id="Livro" name="livro">
             <optgroup label="Antigo Testamento" id="optant">
-                <option value="{{txt}}" selected>{{txt}}</option>
-                <option value="{{txt2}}">{{txt2}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
+                {{#each txts_old as | livro |}}
+                    <option value={{livro/nome}}
+                        {{#if (checkSelected livro/nome selected)}}
+                            selected
+                        {{/if}}>
+                        {{livro/nome}}
+                    </option>
+                {{/each}}
             </optgroup>
 
             <optgroup label="Novo Testamento" id="optnov">
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
-                <option value="{{txt}}">{{txt}}</option>
+                {{#each txts_new as | livro |}}
+                    <option value={{livro/nome}}
+                        {{#if (checkSelected livro/nome selected)}}
+                            selected
+                        {{/if}}>
+                        {{livro/nome}}
+                    </option>
+                {{/each}}
             </optgroup>
         </select>
 
