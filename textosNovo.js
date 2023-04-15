@@ -8295,6 +8295,8 @@ let apocalipse = fun.newLivro(73, "Apocalipse", "Ap", 22, {
         21: "21.A graça do Senhor Jesus esteja com todos."}
 });
 
+let livros = [mateus, marcos, lucas, joao, atos, romanos, Icorintios, IIcorintios, galatas, efesios, filipenses, colossenses, Itessalonicenses, IItessalonicenses, Itimoteo, IItimoteo, tito, filemon, hebreus, tiago, Ipedro, IIpedro, Ijoao, IIjoao, IIIjoao, judas, apocalipse]
+
 module.exports = {
-    mateus, marcos, lucas, joao, atos, romanos, Icorintios, IIcorintios, galatas, efesios, filipenses, colossenses, Itessalonicenses, IItessalonicenses, Itimoteo, IItimoteo, tito, filemon, hebreus, tiago, Ipedro, IIpedro, Ijoao, IIjoao, IIIjoao, judas, apocalipse
+    livros, mateus, marcos, lucas, joao, atos, romanos, Icorintios, IIcorintios, galatas, efesios, filipenses, colossenses, Itessalonicenses, IItessalonicenses, Itimoteo, IItimoteo, tito, filemon, hebreus, tiago, Ipedro, IIpedro, Ijoao, IIjoao, IIIjoao, judas, apocalipse
 }

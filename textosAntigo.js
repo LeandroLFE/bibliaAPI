@@ -28042,6 +28042,8 @@ let malaquias = fun.newLivro (46, "Malaquias", "Ml", 3, {
         24: "24.e ele converterá o coração dos pais para os filhos, e o coração dos filhos para os pais, de sorte que não ferirei mais de interdito a terra.”*"}
 });
 
+let livros = [genesis, exodo, levitico, numeros, deuteronomio, josue, juizes, rute, Isamuel, IIsamuel, Ireis, IIreis, Icronicas, IIcronicas, esdras, neemias, tobias, judite, ester, Imacabeus, IImacabeus, jo, salmos, proverbios, eclesiastes, canticos, sabedoria, eclesiastico, isaias, jeremias, lamentacoes, baruc, ezequiel, daniel, oseias, joel, amos, abdias, jonas, miqueias, naum, habacuc, sofonias, ageu, zacarias, malaquias]
+
 module.exports = {
-    genesis, exodo, levitico, numeros, deuteronomio, josue, juizes, rute, Isamuel, IIsamuel, Ireis, IIreis, Icronicas, IIcronicas, esdras, neemias, tobias, judite, ester, Imacabeus, IImacabeus, jo, salmos, proverbios, eclesiastes, canticos, sabedoria, eclesiastico, isaias, jeremias, lamentacoes, baruc, ezequiel, daniel, oseias, joel, amos, abdias, jonas, miqueias, naum, habacuc, sofonias, ageu, zacarias, malaquias
+    livros, genesis, exodo, levitico, numeros, deuteronomio, josue, juizes, rute, Isamuel, IIsamuel, Ireis, IIreis, Icronicas, IIcronicas, esdras, neemias, tobias, judite, ester, Imacabeus, IImacabeus, jo, salmos, proverbios, eclesiastes, canticos, sabedoria, eclesiastico, isaias, jeremias, lamentacoes, baruc, ezequiel, daniel, oseias, joel, amos, abdias, jonas, miqueias, naum, habacuc, sofonias, ageu, zacarias, malaquias
 }

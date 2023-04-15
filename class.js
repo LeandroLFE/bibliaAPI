@@ -19,6 +19,6 @@ module.exports = {
         for (i = numI; i <= numF; i++) {
             escolhido.push(livro.leitura[cap][i]);
         };
-        console.log(escolhido.join(" "));
+        return escolhido.join(" ");
     }
 };
