@@ -1,11 +1,4 @@
 // Estrutura do objeto
-
-// Cauan: daniel e hebreus
-
-/* 
-let tudo = [genesis, exodo, levitico, numeros, deuteronomio, josue, juizes, rute, Isamuel, IIsamuel, Ireis, IIreis, Icronicas, IIcronicas, esdras, tobias, judite, ester, Imacabeus, IImacabeus, jo, salmos, proverbios, eclesiastes, canticos, sabedoria, eclesiastico, isaias, jeremias, lamentacoes, baruc, ezequiel, daniel, oseias, joel, amos, abdias, jonas, miqueias, naum, habacuc, sofonias, ageu, zacarias, malaquias, mateus, marcos, lucas, joao, atos, romanos, Icorintios, IIcorintios, galatas, efesios, filipenses, colossenses, Itessalonicenses, IItessalonicenses, Itimoteo, IItimoteo, tito, filemon, hebreus, tiago, Ipedro, IIpedro, Ijoao, IIjoao, IIIjoao, judas, apocalipse] 
-*/
-
 module.exports = {
     newLivro (i, n, a, c, l) {
         function Livro (id, nome, abr, capitulos, leitura) {
