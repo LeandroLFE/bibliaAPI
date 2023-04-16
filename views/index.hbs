@@ -13,7 +13,7 @@
 
     <form action="/resultado" method="post">
         <label for="Livro">Livro</label>
-        <select class="form-select" aria-label="Default select example" id="Livro" name="livro" onblur="mudou1(value)">
+        <select class="form-select" aria-label="Default select example" id="Livro" name="livro" onblur="mudou1(value)"> {{!-- quando o usuário clicar fora da seleção a função será executada --}}
             <option selected disabled>Escolha o livro</option>
             <optgroup label="Antigo Testamento">
                 {{#each txts_old as | livro |}}
@@ -25,10 +25,10 @@
                     </option>
                 {{/each}}
             </optgroup>
-
+            {{!-- Todas as opções de livro dentro da lista antigo.livros serão impressas em uma option --}}
             <optgroup label="Novo Testamento">
                 {{#each txts_new as | livro |}}
-                    <option value={{livro}}
+                    <option value={{livro/nome}}
                         {{#if (checkSelected livro/nome selected)}}
                             selected
                         {{/if}}>
@@ -37,6 +37,8 @@
                 {{/each}}
             </optgroup>
         </select>
+
+        {{!-- As listas seguintes serão preenchidas por meio de funções --}}
 
         <label for="Capítulo">Capítulo</label>
         <select class="form-select" aria-label="Default select example" id="Capítulo" name="capitulo" onblur="mudou2(value)">
@@ -63,7 +65,7 @@
             let nomes; // recupera o livro escolhido na função mudou
 
             function mudou1(valor) { //  MUDANDO LIVRO
-                for (a = 0; a < txts_old.length; a++){
+                for (a = 0; a < txts_old.length; a++){ // Verifica no antigo testamento
                     if (txts_old[a].nome == valor){ // Procura o livro
                         for (z = 1; z <= txts_old[a].capitulos; z++) { // Lista os capítulos
                             let option = document.createElement('option');
@@ -76,10 +78,9 @@
                         return nomes = txts_old[a].nome
                     }
                 }
-                for (a = 0; a < txts_new.length; a++){
-                    if (txts_new[a].nome == valor){
-
-                        for (z = 1; z <= txts_new[a].capitulos; z++) {
+                for (a = 0; a < txts_new.length; a++){ // Verifica no antigo testamento
+                    if (txts_new[a].nome == valor){ // Procura o livro
+                        for (z = 1; z <= txts_new[a].capitulos; z++) { // Lista os capítulos
                             let option = document.createElement('option');
                             option.value = z;
                             let conteudo = document.createTextNode(z);
@@ -87,14 +88,13 @@
 
                             listaCap.appendChild(option);
                         };
-
                         return nomes = txts_new[a].nome
                     }
                 }
             };
             
             function mudou2(valor) { // MUDANDO CAPÍTULO
-                for (a = 0; a < txts_old.length; a++){
+                for (a = 0; a < txts_old.length; a++){ // Verifica no antigo testamento
                     if (txts_old[a].nome == nomes){ // Procura o livro
                         for (z = 1; z <= txts_old[a].leitura[valor]["versi"]; z++) { // Lista os versículos
                             let option = document.createElement('option');
@@ -110,15 +110,19 @@
                         }
                     }
                 }
-                for (a = 0; a < txts_new.length; a++){
+                for (a = 0; a < txts_new.length; a++){ // Verifica no antigo testamento
                     if (txts_new[a].nome == nomes){ // Procura o livro
                         for (z = 1; z <= txts_new[a].leitura[valor]["versi"]; z++) { // Lista os versículos
                             let option = document.createElement('option');
                             option.value = z;
                             let conteudo = document.createTextNode(z);
                             option.appendChild(conteudo);
-                            listaVerI.appendChild(option);
-                            listaVerF.appendChild(option);
+
+                            listaVerI.appendChild(option.cloneNode(true))
+                            listaVerF.appendChild(option)
+                            if (txts_new[a].leitura[valor]["versi"] == z) {
+                                option.selected = true
+                            }
                         }
                     }
                 }

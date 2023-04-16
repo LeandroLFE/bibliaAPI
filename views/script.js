@@ -33,7 +33,6 @@ hbs.registerHelper('json', function (content) {
 });
 
 let mensagem;
-
 app.post('/resultado', (req, res) => {
     res.render('./index', {
         txts_old: antigo.livros,
@@ -41,9 +40,10 @@ app.post('/resultado', (req, res) => {
         txts_new: novo.livros,
         message: mensagem
     })
-    const { livro, capitulo, verI, verF } = req.body;
 
-    //ANTIGO - FAZER TESTES
+    const { livro, capitulo, verI, verF } = req.body; // Recebe os valores do formulário
+
+    //ANTIGO 
     for (a = 0; a < antigo.livros.length; a++) {
         if (antigo.livros[a].nome == livro) { // Para saber o livro
 
@@ -58,7 +58,7 @@ app.post('/resultado', (req, res) => {
                                     return mensagem = fun.agrupar(antigo.livros[a], b, c, d);
     }}}}}}}}
 
-    // NOVO - FAZER TESTES
+    // NOVO 
     for (a = 0; a < novo.livros.length; a++) {
         if (novo.livros[a].nome == livro) { // Para saber o livro
 
