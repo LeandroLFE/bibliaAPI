@@ -29,16 +29,20 @@ Template
   // Para exibir valor diretamente
   console.log(fun.agrupar(testamento.livro, capítulo, versículo inicial, versículo final))
   
-  // "testamento" se refere às opções antigo ou novo
+  // Para exibir valor utilizando listas
+  console.log(fun.agrupar(testamento.livros[índice do livro], capítulo, versículo inicial, versículo final))
+  
+  // Para exibir o capítulo inteiro
+  console.log(fun.agrupar(testamento.livro, capítulo, 1, testamento.livro.leitura[capítulo]["versi"]));
 ```
 
-Exemplo (Gn 1:1-3)
+Exemplo 
 ```javascript
-  // Diretamente
+  // Diretamente (Gn 1:1-3)
   console.log(fun.agrupar(antigo.genesis, 1, 1, 3))
   
-  // Utilizando listas
-  console.log(fun.agrupar(antigo.livros[0], 1, 1, 3))
+  // Utilizando listas (Gn 1)
+  console.log(fun.agrupar(antigo.livros[0], 1, 1, antigo.livros[0].leitura[capítulo]["versi]))
 ```
 
 Para encerrar o processo, utilize Ctrl+C
