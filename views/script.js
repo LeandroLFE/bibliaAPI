@@ -3,16 +3,6 @@ const fun = require('../class');
 const antigo = require('../textosAntigo');
 const novo = require('../textosNovo');
 
-/* let grupoant = document.querySelector('#optant');
-
-for (z = 1; z <= antigo.livros.length; z++) {
-    let option = document.createElement('option');
-    option.value = antigo.livros[z].nome;
-    option.appendChild(document.createTextNode(antigo.livros[z].nome));
-
-    grupoant.appendChild(option)
-}; */
-
 // SITE EXEMPLO
 const express = require('express');
 const app = express();
@@ -36,47 +26,50 @@ const hbs = require('hbs');
 
 hbs.registerHelper('checkSelected', function (id, target) {
     return id === target
-})
+});
+
+hbs.registerHelper('json', function (content) {
+    return JSON.stringify(content);
+});
+
+let mensagem;
 
 app.post('/resultado', (req, res) => {
     res.render('./index', {
-        msg: "Formulário recebido",
         txts_old: antigo.livros,
         selected: 1,
-        txts_new: novo.livros
+        txts_new: novo.livros,
+        message: mensagem
     })
     const { livro, capitulo, verI, verF } = req.body;
 
-//ANTIGO - FAZER TESTES
+    //ANTIGO - FAZER TESTES
+    for (a = 0; a < antigo.livros.length; a++) {
+        if (antigo.livros[a].nome == livro) { // Para saber o livro
 
-for (a = 0; a < antigo.livros.length; a++) {
-    if (antigo.livros[a].nome == livro) { // Para saber o livro
+            for (b = 1; b <= antigo.livros[a].capitulos; b++) {
+                if (b == capitulo) { // Para saber o capítulo
 
-        for (b = 1; b <= antigo.livros[a].capitulos; b++) {
-            if (b == capitulo) { // Para saber o capítulo
+                    for (c = 1; c <= antigo.livros[a].leitura[b]["versi"]; c++) {
+                        if (c == verI) { // Para saber o versículo inicial
 
-                for (c = 1; c <= antigo.livros[a].leitura[b]["versi"]; c++) {
-                    if (c == verI) { // Para saber o versículo inicial
+                            for (d = 1; d <= antigo.livros[a].leitura[b]["versi"]; d++) {
+                                if (d == verF) { // Para saber o versículo final
+                                    return mensagem = fun.agrupar(antigo.livros[a], b, c, d);
+    }}}}}}}}
 
-                        for (d = 1; d <= antigo.livros[a].leitura[b]["versi"]; d++) {
-                            if (d == verF) { // Para saber o versículo final
-                                console.log(fun.agrupar(antigo.livros[a], b, c, d));
-                            }}}}}}} 
-}
+    // NOVO - FAZER TESTES
+    for (a = 0; a < novo.livros.length; a++) {
+        if (novo.livros[a].nome == livro) { // Para saber o livro
 
-// NOVO - FAZER TESTES
-for (a = 0; a < novo.livros.length; a++) {
-    if (novo.livros[a].nome == livro) { // Para saber o livro
+            for (b = 1; b <= novo.livros[a].capitulos; b++) {
+                if (b == capitulo) { // Para saber o capítulo
 
-        for (b = 1; b <= novo.livros[a].capitulos; b++) {
-            if (b == capitulo) { // Para saber o capítulo
+                    for (c = 1; c <= novo.livros[a].leitura[b]["versi"]; c++) {
+                        if (c == verI) { // Para saber o versículo inicial
 
-                for (c = 1; c <= novo.livros[a].leitura[b]["versi"]; c++) {
-                    if (c == verI) { // Para saber o versículo inicial
-
-                        for (d = 1; d <= novo.livros[a].leitura[b]["versi"]; d++) {
-                            if (d == verF) { // Para saber o versículo final
-                                console.log(fun.agrupar(novo.livros[a], b, c, d));
-                            }}}}}}} 
-}
+                            for (d = 1; d <= novo.livros[a].leitura[b]["versi"]; d++) {
+                                if (d == verF) { // Para saber o versículo final
+                                    return mensagem = fun.agrupar(novo.livros[a], b, c, d);
+    }}}}}}}}
 });

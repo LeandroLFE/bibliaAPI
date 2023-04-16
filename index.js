@@ -13,4 +13,5 @@ console.log('')
 
 console.log('// Para selecionar tudo');
 console.log(fun.agrupar(antigo.genesis, 1, 1, antigo.genesis.leitura[1]["versi"]));
+// Mais exemplos de retorno na pasta views (site exemplo utilizando)
  */
