@@ -21,7 +21,7 @@ Bíblia completa (73 livros) em português.
 
 ## Acesso ao exemplo
 Após iniciar, é possível acessar a página de exemplo:<br>
-→ <a href="http://localhost::3020">http://localhost::3020</a>
+→ <a target="_blank" href="http://localhost::3020">http://localhost::3020</a>
 
 ## Uso
 Template
@@ -39,6 +39,11 @@ Exemplo (Gn 1:1-3)
   
   // Utilizando listas
   console.log(fun.agrupar(antigo.livros[0], 1, 1, 3))
+```
+
+Para encerrar o processo, utilize Ctrl+C
+```bash
+  Deseja finalizar o arquivo em lotes (S/N)? s
 ```
 
 ## Créditos
