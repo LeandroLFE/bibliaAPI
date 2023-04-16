@@ -42,7 +42,7 @@ Exemplo
   console.log(fun.agrupar(antigo.genesis, 1, 1, 3))
   
   // Utilizando listas (Gn 1)
-  console.log(fun.agrupar(antigo.livros[0], 1, 1, antigo.livros[0].leitura[capítulo]["versi]))
+  console.log(fun.agrupar(antigo.livros[0], 1, 1, antigo.livros[0].leitura[capítulo]["versi"]))
 ```
 
 Para encerrar o processo, utilize Ctrl+C
